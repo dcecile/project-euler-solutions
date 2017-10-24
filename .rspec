@@ -1,3 +1,4 @@
 -I .
 --format documentation
 --color
+--fail-fast
