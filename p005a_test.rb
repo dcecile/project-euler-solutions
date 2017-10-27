@@ -90,7 +90,7 @@ RSpec.describe Factors do
     end
   end
 
-  describe '.find_common_factors' do
+  describe '::find_common_factors' do
     test_cases = {
       6 => {
         2 => 2,
@@ -112,7 +112,7 @@ RSpec.describe Factors do
     end
   end
 
-  describe '.find_smallest_multiple' do
+  describe '::find_smallest_multiple' do
     test_cases = {
       6 => 60,
       10 => 2520,

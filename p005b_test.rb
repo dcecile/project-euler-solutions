@@ -10,7 +10,7 @@ RSpec.describe Factorization do
   factors << Factorization.make_prime(7)
   factors << Factorization.new(2, factors[4])
 
-  describe ".factorize" do
+  describe "::factorize" do
     (2..8).each do |n|
       it "factors #{n}" do
         preceding_factorizations = factors.take(n - 1)
@@ -27,7 +27,7 @@ RSpec.describe Factorization do
     end
   end
 
-  describe ".build_factorizations" do
+  describe "::build_factorizations" do
     (2..8).each do |n|
       it "builds to #{n}" do
         expect(
@@ -37,7 +37,7 @@ RSpec.describe Factorization do
     end
   end
 
-  describe ".find_common_factors" do
+  describe "::find_common_factors" do
     test_cases = {
       factors[2..2] => { 2 => 1 },
       factors[2..3] => { 2 => 1, 3 => 1 },
@@ -52,7 +52,7 @@ RSpec.describe Factorization do
     end
   end
 
-  describe ".solve" do
+  describe "::solve" do
     test_cases = {
       2 => 2,
       3 => 6,
