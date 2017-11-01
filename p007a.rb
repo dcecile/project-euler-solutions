@@ -1,17 +1,18 @@
+# 10001st prime
+# https://projecteuler.net/problem=7
+
 require "set"
 
+# Use a sorted set as a Sieve of Eratosthenes, to
+# get easy access to the next prime and cull non-prime
+# numbers -- combined with an upper bound for the
+# n-th prime
 class Sieve
   def self.find_nth_prime(n)
     limit = calculate_nth_prime_limit(n)
     set = SortedSet.new(2..limit)
     (n - 1).times do
-      current = set.first
-      set.delete(current)
-      multiple = current * current
-      while multiple < limit
-        set.delete(multiple)
-        multiple += current
-      end
+      remove_multiples(limit, set, set.first)
     end
     set.first
   end
@@ -27,6 +28,15 @@ class Sieve
       n * (Math.log(n) + Math.log(Math.log(n)))
     else
       8
+    end
+  end
+
+  def self.remove_multiples(limit, set, prime)
+    set.delete(prime)
+    multiple = prime * prime
+    while multiple < limit
+      set.delete(multiple)
+      multiple += prime
     end
   end
 end

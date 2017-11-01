@@ -6,12 +6,14 @@
 # needed), and because the algorithm is O(n)
 class DirectSolution
   def self.solve(n)
-    sum_of_squares = (1..n)
+    sum_of_squares =
+      (1..n)
       .map(&method(:square))
       .reduce(0, &:+)
 
     square_of_sum = square(
-      (1..n).reduce(0, &:+))
+      (1..n).reduce(0, &:+)
+    )
 
     square_of_sum - sum_of_squares
   end
@@ -26,7 +28,8 @@ end
 # but this algorithm is O(n**2)
 class CombinationsSolution
   def self.solve(n)
-    2 * (1..n)
+    2 *
+      (1..n)
       .to_a
       .combination(2)
       .lazy

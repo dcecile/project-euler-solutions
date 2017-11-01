@@ -8,13 +8,16 @@ RSpec.describe PartialProduct do
       [[2, 3, 4, 5], 3, [24, 60]],
       [[2, 0, 4, 5], 2, [0, 0, 20]],
       [[0, 2, 0, 3, 4], 2, [0, 0, 0, 12]],
-      [[0, 0, 2, 3, 0, 4, 5], 2, [0, 0, 6, 0, 0, 20]],
+      [[0, 0, 2, 3, 0, 4, 5], 2, [0, 0, 6, 0, 0, 20]]
     ]
     test_cases.each do |all_digits, product_length, expected_products|
       it "finds #{product_length}-length products from #{all_digits}" do
         partial_product = PartialProduct.new(
-          all_digits, product_length)
-        expect(partial_product.each.to_a).to eq(expected_products)
+          all_digits, product_length
+        )
+        expect(partial_product.each.to_a).to eq(
+          expected_products
+        )
       end
     end
   end
@@ -22,12 +25,14 @@ RSpec.describe PartialProduct do
   describe "::parse_input" do
     it "parses small input" do
       expect(PartialProduct.parse_input("1")).to eq(
-        [1])
+        [1]
+      )
     end
 
     it "parses big input" do
       expect(PartialProduct.parse_input("12345")).to eq(
-        [1, 2, 3, 4, 5])
+        [1, 2, 3, 4, 5]
+      )
     end
 
     it "parses multiline input" do
@@ -36,7 +41,8 @@ RSpec.describe PartialProduct do
         456
       INPUT
       expect(PartialProduct.parse_input(input)).to eq(
-        [1, 2, 3, 4, 5, 6])
+        [1, 2, 3, 4, 5, 6]
+      )
     end
   end
 
@@ -67,12 +73,18 @@ RSpec.describe PartialProduct do
       ["small forward", "2345", 2, 20],
       ["small reverse", "5432", 2, 20],
       ["official example", official_input, 4, 5832],
-      ["official problem", official_input, 13, 23514624000],
+      [
+        "official problem",
+        official_input,
+        13,
+        23_514_624_000
+      ]
     ]
     test_cases.each do |name, input, product_length, solution|
       it "solves #{name}" do
         expect(PartialProduct.solve(input, product_length)).to eq(
-          solution)
+          solution
+        )
       end
     end
   end

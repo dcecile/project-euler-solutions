@@ -1,8 +1,16 @@
+# Largest product in a series
+# https://projecteuler.net/problem=8
+
+# Compute the product incrementally, multiplying by
+# new digits and dividing by old digits, keep a stack
+# of zeroes separately
 class PartialProduct
   def self.solve(input, product_length)
-    PartialProduct.new(parse_input(input), product_length)
-      .each
-      .max
+    partial_product = PartialProduct.new(
+      parse_input(input),
+      product_length
+    )
+    partial_product.each.max
   end
 
   def self.parse_input(input)
@@ -52,7 +60,7 @@ class PartialProduct
 
   def push!
     digit = @next_digits.shift
-    if digit == 0
+    if digit.zero?
       @zeroes += 1
     else
       @product *= digit
@@ -62,7 +70,7 @@ class PartialProduct
 
   def pop!
     digit = @current_digits.shift
-    if digit == 0
+    if digit.zero?
       @zeroes -= 1
     else
       @product /= digit

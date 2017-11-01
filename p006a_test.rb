@@ -3,7 +3,7 @@ require "p006a"
 solutions = [
   DirectSolution,
   CombinationsSolution,
-  DynamicProgrammingSolution,
+  DynamicProgrammingSolution
 ]
 solutions.each do |solution|
   RSpec.describe solution do
@@ -12,9 +12,9 @@ solutions.each do |solution|
       1 => 0,
       2 => 4,
       3 => 22,
-      10 => 2640,
-      50 => 1582700,
-      100 => 25164150,
+      10 => 2_640,
+      50 => 1_582_700,
+      100 => 25_164_150
     }
     test_cases.each do |input, output|
       it "solves #{input}" do
