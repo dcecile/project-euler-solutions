@@ -61,7 +61,8 @@ Factorization = Struct.new(:value, :parent_factor) do
   end
 
   def self.make_prime(n)
-    Factorization.new(value=n, parent_factor=nil)
+    parent_factor = nil
+    Factorization.new(n, parent_factor)
   end
 
   def prime?
