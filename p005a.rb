@@ -1,6 +1,9 @@
 # Smallest multiple
 # https://projecteuler.net/problem=5
 
+# Store prime factors of a number in a hash, incrementally
+# build a list of primes, and find common factors by
+# merging hashes
 class Factors
   attr_reader :primes
 
@@ -26,7 +29,7 @@ class Factors
   end
 
   def <<(input)
-    if input.is_a?(Fixnum)
+    if input.is_a?(Integer)
       @primes[input] += 1
     else
       input.primes.each do |prime, count|
@@ -44,16 +47,26 @@ class Factors
   def factorize(n)
     factors = Factors.new
     loop do
-      factor = @primes.keys
-        .find { |prime| n % prime == 0 }
-      if factor != nil && factor != n
-        factors << factor
-        n /= factor
-      else
-        factors << n
-        break
-      end
+      n = add_one_factor(factors, n)
+      break if n.nil?
     end
     factors
+  end
+
+  def add_one_factor(factors, n)
+    factor = find_one_factor(n)
+    if !factor.nil? && factor != n
+      factors << factor
+      n / factor
+    else
+      factors << n
+      nil
+    end
+  end
+
+  def find_one_factor(n)
+    @primes
+      .keys
+      .find { |prime| (n % prime).zero? }
   end
 end
