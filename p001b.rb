@@ -1,16 +1,19 @@
 # Multiples of 3 and 5
 # https://projecteuler.net/problem=1
 
-def calculate_arithmetic_series_sum(from, to, by)
-  to -= (to - from) % by
-  count = (to - from) / by + 1
-  count * (to + from) / 2
-end
+# Instead of looping, calculate the sum of arithemetic series
+# to find the answer (avoiding double-counting the common factor)
+module ArithmeticSeries
+  def self.calculate_sum(from, to, by)
+    to -= (to - from) % by
+    count = (to - from) / by + 1
+    count * (to + from) / 2
+  end
 
-def calculate_problem_sum(by)
-  calculate_arithmetic_series_sum(by, 999, by)
+  def self.solve(to)
+    from = 0
+    calculate_sum(from, to, 3) +
+      calculate_sum(from, to, 5) -
+      calculate_sum(from, to, 15)
+  end
 end
-
-puts (calculate_problem_sum(3) +
-  calculate_problem_sum(5) -
-  calculate_problem_sum(15))
