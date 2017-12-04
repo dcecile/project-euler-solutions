@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "p004a"
 
 RSpec.describe Solution do

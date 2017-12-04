@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "p002a"
 
 RSpec.describe(FibonacciNumber) do

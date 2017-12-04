@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Even Fibonacci numbers
 # https://projecteuler.net/problem=2
 

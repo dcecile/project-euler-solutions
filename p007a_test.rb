@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "p007a"
 
 RSpec.describe Sieve do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Largest palindrome product
 # https://projecteuler.net/problem=4
 

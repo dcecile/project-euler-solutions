@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "p005a"
 
 RSpec.describe Factors do

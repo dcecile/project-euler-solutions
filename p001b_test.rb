@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "p001b"
 
 RSpec.describe(ArithmeticSeries) do

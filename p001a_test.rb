@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "p001a"
 
 RSpec.describe(RangeFilter) do

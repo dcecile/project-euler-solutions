@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "p008a"
 
 RSpec.describe PartialProduct do

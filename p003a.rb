@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Largest prime factor
 # https://projecteuler.net/problem=3
 

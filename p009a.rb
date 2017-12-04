@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Special Pythagorean triplet
 # https://projecteuler.net/problem=9
 

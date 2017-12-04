@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Largest product in a series
 # https://projecteuler.net/problem=8
 
@@ -42,7 +44,7 @@ class PartialProduct
   private
 
   def product
-    if @zeroes > 0
+    if @zeroes.positive?
       0
     else
       @product

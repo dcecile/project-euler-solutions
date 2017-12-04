@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Multiples of 3 and 5
 # https://projecteuler.net/problem=1
 

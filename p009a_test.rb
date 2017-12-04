@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "p009a"
 
 RSpec.describe Triplet do

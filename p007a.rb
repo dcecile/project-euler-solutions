@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 10001st prime
 # https://projecteuler.net/problem=7
 
